@@ -171,8 +171,8 @@ function sync_speed:OnSync()
 	local percent = math.clamp(0, 1, value / SpeedOmeter_Maximun)
 	local angle = percent * CircleTotalAngle
 	
-	local x = SpeedOmeter_X + (CircleRadius-30) * math.cos(math.rad(angle + 135))
-	local y = SpeedOmeter_Y + (CircleRadius-30) * math.sin(math.rad(angle + 135)) 
+	local x = SpeedOmeter_X + (CircleRadius-30) * math.cos(math.rad(angle + CircleStartAngle))
+	local y = SpeedOmeter_Y + (CircleRadius-30) * math.sin(math.rad(angle + CircleStartAngle)) 
 	Line(math.floor(x), math.floor(y), SpeedOmeter_X, SpeedOmeter_Y)
 	
 	hud_speed_bg:Set({text = string.format("%.0f", value)})
